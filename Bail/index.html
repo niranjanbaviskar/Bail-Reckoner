@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bail Reckoner</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ensure body takes the full height of the viewport */
+  overflow: auto; /* Prevent scrolling due to the pseudo-element */
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/background.jpg'); /* Your image path */
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-position: center; /* Keep the image centered */
+  filter: blur(1px); /* Apply blur to the background */
+  z-index: -1; /* Ensure the background stays behind the content */
+}
+
+.main-content {
+  position: relative; /* Content stays above the blurred background */
+  z-index: 1;
+  padding: 20px; /* Example padding for content */
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bail Reckoner System</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Section 1: Prisoner Info & Login -->
+      <section id="prisoner-login" class="box square">
+        <div class="image-container">
+            <img src="images/img1.jpg" alt="Prisoner" class="prisoner-image">
+        </div>
+        <h2>Prisoner Information</h2>
+        
+        <div class="button-container">
+            <button onclick="processLogin1()">Login</button>
+        </div>
+    </section>
+    
+    <style>
+        /* Box Styling */
+        .box {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #e66465, #9198e5);
+            color: white;
+            text-align: center;
+            width: 300px;
+            margin: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+    
+        /* Image Container to keep the image inside the box */
+        .image-container {
+            width: 100%;
+            height: 200px; /* Adjust the height as needed */
+            overflow: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    
+        /* Ensure the image is responsive and contained within the box */
+        .prisoner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the container without stretching */
+        }
+    
+        /* Button Styling */
+        .button-container {
+            margin-top: 15px;
+        }
+    
+        button {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+    
+        button:hover {
+            background-color: #db0f0f;
+            color: white;
+        }
+    </style>
+    
+      
+      <script>
+        function processLogin1() {
+          // After login, redirect to the next page
+          window.location.href = "prisoner-login-next.html";  // Change to the appropriate next page
+        }
+      </script>
+      
+      
+
+      <!-- Section 2: Bail Calculation -->
+      <section id="bail-calculation" class="box square">
+        <div class="image-container">
+            <img src="images/img2.jpg" alt="Prisoner" class="bail-image">
+        </div>
+        <h2>Bail Calculation</h2>
+        
+        <div class="button-container">
+            <button onclick="processLogin2()">Calculate</button>
+        </div>
+    </section>
+    
+    <style>
+        /* Box Styling */
+        .box {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #e66465, #9198e5);
+            color: white;
+            text-align: center;
+            width: 300px;
+            margin: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+    
+        /* Image Container to keep the image inside the box */
+        .image-container {
+            width: 100%;
+            height: 200px; /* Adjust the height as needed */
+            overflow: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    
+        /* Ensure the image is responsive and contained within the box */
+        .bail-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the container without stretching */
+        }
+    
+        /* Button Styling */
+        .button-container {
+            margin-top: 15px;
+        }
+    
+        button {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+    
+        button:hover {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    
+      
+      <script>
+        function processLogin2() {
+          // After login, redirect to the next page
+          window.location.href = "bail-calculation.html";  // Change to the appropriate next page
+        }
+      </script>
+
+      <!-- Section 3: Lawyer Finder -->
+      <section id="Lawyer-Finder" class="box square">
+        <div class="image-container">
+            <img src="images/img3.jpg" alt="Lawyer" class="lawyer-image">
+        </div>
+        <h2>Lawyer Finder</h2>
+        
+        <div class="button-container">
+            <button onclick="processLogin3()">Find Lawyer</button>
+            
+        </div>
+    </section>
+    
+    <style>
+        /* Box Styling */
+        .box {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #e66465, #9198e5);
+            color: white;
+            text-align: center;
+            width: 300px;
+            margin: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+    
+        /* Image Container to keep the image inside the box */
+        .image-container {
+            width: 100%;
+            height: 200px; /* Adjust the height as needed */
+            overflow: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    
+        /* Ensure the image is responsive and contained within the box */
+        .lawyer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the container without stretching */
+        }
+    
+        /* Button Styling */
+        .button-container {
+            margin-top: 15px;
+        }
+    
+        button {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+    
+        button:hover {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    
+      <script>
+        function processLogin3() {
+          // After login, redirect to the next page
+          window.location.href = "lawyer-finder.html";  // Change to the appropriate next page
+        }
+      </script>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2>FAQs</h2>
+        
+        <div class="faq-item">
+          <button onclick="toggleFAQ(1)">What is bail?</button>
+          <div id="faq-1" class="faq-answer">Bail is a legal process...</div>
+        </div>
+        
+        <div class="faq-item">
+          <button onclick="toggleFAQ(2)">How is bail calculated?</button>
+          <div id="faq-2" class="faq-answer">Bail is calculated based on various factors...</div>
+        </div>
+      
+        <div class="faq-item">
+          <button onclick="toggleFAQ(3)">Who decides if bail will be granted?</button>
+          <div id="faq-3" class="faq-answer">A judge or magistrate decides if bail is granted...</div>
+        </div>
+        
+        <div class="faq-item">
+          <button onclick="toggleFAQ(4)">Can bail be denied?</button>
+          <div id="faq-4" class="faq-answer">Yes, bail can be denied if certain conditions apply...</div>
+        </div>
+        
+        <div class="faq-item">
+          <button onclick="toggleFAQ(5)">What are the different types of bail?</button>
+          <div id="faq-5" class="faq-answer">There are different types of bail, including cash bail, property bail, and bond bail...</div>
+        </div>
+        
+        <div class="faq-item">
+          <button onclick="toggleFAQ(6)">What happens if I can't pay bail?</button>
+          <div id="faq-6" class="faq-answer">If you can't pay bail, you may remain in jail until your trial...</div>
+        </div>
+        
+        <div class="faq-item">
+          <button onclick="toggleFAQ(7)">What is the difference between bail and bond?</button>
+          <div id="faq-7" class="faq-answer">Bail is the amount set by the court, while a bond is a guarantee given by a third party to secure the bail...</div>
+        </div>
+      
+        <div class="faq-item">
+          <button onclick="toggleFAQ(8)">Can I get bail after being arrested?</button>
+          <div id="faq-8" class="faq-answer">Yes, you may be eligible for bail immediately after being arrested, depending on the crime...</div>
+        </div>
+      
+        <div class="faq-item">
+          <button onclick="toggleFAQ(9)">How do I apply for bail?</button>
+          <div id="faq-9" class="faq-answer">To apply for bail, you need to appear before a judge or magistrate...</div>
+        </div>
+      
+        <div class="faq-item">
+          <button onclick="toggleFAQ(10)">Can bail conditions be changed?</button>
+          <div id="faq-10" class="faq-answer">Yes, bail conditions can be modified by the court if necessary...</div>
+        </div>
+      
+      </section>
+
+      <section class="footer-section">
+        ©2024 Niranjan Baviskar. ALL RIGHT RESERVERD. 
+      
+      <style>
+        .footer-section {
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+          margin: 5px; /* Spacing around the section */
+          padding: 12px; /* Padding inside the section */
+          background-color: #d37777; /* Light gray background */
+          color: #444; /* Slightly darker text color for contrast */
+          border-top: 2px solid #ccc; /* Decorative top border */
+          border-radius: 5px; /* Rounded corners */
+          box-shadow: 0 2px 4px rgb(0, 0, 0); /* Subtle shadow for depth */
+        }
+      </style>
+      
+      
+      
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

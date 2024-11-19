@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawyer Finder</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: none;
+    }
+
+    /* Background image with blur */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/background2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(5px);
+      z-index: -1; /* Keeps it behind the content */
+    }
+
+    #content-wrapper {
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    header {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Box Styles */
+    .box {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #e66465, #9198e5);
+      color: white;
+      text-align: center;
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    .box h2 {
+      margin-bottom: 20px;
+    }
+
+    .box div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: white;
+      color: #333;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #333;
+      color: white;
+    }
+
+    /* Hidden section initially */
+    #lawyer-finder-form {
+      display: none;
+    }
+
+    #lawyer-recommendation-section {
+      display: none;
+      background-color: #444;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lawyer Finder</h1>
+  </header>
+
+  <main>
+    <!-- Find Lawyer Button -->
+    <section id="lawyer-finder-button" class="box">
+      <h2>Find the Best Lawyer</h2>
+      <button onclick="openLawyerFinderForm()">Find Lawyer</button>
+    </section>
+
+    <!-- Lawyer Finder Form -->
+    <section id="lawyer-finder-form" class="box">
+      <h2>Lawyer Finder Form</h2>
+      <div>
+        <label for="crime-type">Crime Type:</label>
+        <select id="crime-type">
+          <option value="robbery">Robbery</option>
+          <option value="fraud">Fraud</option>
+          <option value="murder">Murder</option>
+          <option value="assault">Assault</option>
+        </select>
+      </div>
+      <div>
+        <label for="criminal-history">Criminal History:</label>
+        <select id="criminal-history">
+          <option value="none">None</option>
+          <option value="minor">Minor Offenses</option>
+          <option value="major">Major Offenses</option>
+        </select>
+      </div>
+      <div>
+        <label for="case-urgency">Urgency of Case:</label>
+        <select id="case-urgency">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div>
+        <label for="budget">Budget for Lawyer:</label>
+        <input type="number" id="budget" placeholder="Enter your budget in Rupees">
+      </div>
+      <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter your location">
+      </div>
+      <button onclick="findLawyer()">Find Lawyer</button>
+    </section>
+
+    <!-- Lawyer Recommendation Section -->
+    <section id="lawyer-recommendation-section">
+      <h2>Recommended Lawyers</h2>
+      <div id="lawyer-recommendations"></div>
+      <button onclick="resetForm()">Go Back</button>
+    </section>
+  </main>
+
+  <script>
+    // Show Lawyer Finder Form
+    function openLawyerFinderForm() {
+      document.getElementById('lawyer-finder-form').style.display = 'block';
+      document.getElementById('lawyer-finder-button').style.display = 'none';
+    }
+
+    // Find Lawyers based on input data
+    function findLawyer() {
+      const crimeType = document.getElementById('crime-type').value;
+      const criminalHistory = document.getElementById('criminal-history').value;
+      const caseUrgency = document.getElementById('case-urgency').value;
+      const budget = document.getElementById('budget').value;
+      const location = document.getElementById('location').value;
+
+      let recommendedLawyers = [];
+
+      // Logic to recommend lawyers based on the inputs
+      if (crimeType === 'robbery' && caseUrgency === 'high') {
+        recommendedLawyers = ['harsh hemrajani - Expert in Robbery Cases', 'sanket Inamke - High Urgency Criminal Defense Lawyer'];
+      } else if (crimeType === 'fraud' && criminalHistory === 'none') {
+        recommendedLawyers = ['Priya Kulkarni - Fraud Specialist', 'pradip pujari - Affordable Fraud Lawyer'];
+      } else if (crimeType === 'murder' && budget > 1000) {
+        recommendedLawyers = ['Avani Dhoke - Murder Defense Lawyer', 'Yogen Kakade - Experienced in Serious Crimes'];
+      } else if (crimeType === 'assault' && location === 'Pune') {
+        recommendedLawyers = ['Shirish Patil - Assault Lawyer in NY', 'Swapnil Kulkarni - Assault Defense Lawyer'];
+      } else {
+        recommendedLawyers = ['No suitable lawyer found. Please adjust your preferences.'];
+      }
+
+      // Show lawyer recommendations
+      const recommendationList = recommendedLawyers.map(lawyer => `<p>${lawyer}</p>`).join('');
+      document.getElementById('lawyer-recommendations').innerHTML = recommendationList;
+
+      // Hide the lawyer finder form and show recommendations
+      document.getElementById('lawyer-finder-form').style.display = 'none';
+      document.getElementById('lawyer-recommendation-section').style.display = 'block';
+    }
+
+    // Reset form to start over
+    function resetForm() {
+      document.getElementById('lawyer-finder-form').style.display = 'none';
+      document.getElementById('lawyer-finder-button').style.display = 'block';
+      document.getElementById('lawyer-recommendation-section').style.display = 'none';
+    }
+  </script>
+  <section class="footer-section">
+    ©2024 Niranjan Baviskar. ALL RIGHTS RESERVED.
+</section>
+
+<style>
+  /* General body styling */
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Main content area should take up remaining space */
+  main {
+    flex: 1;
+  }
+
+  /* Footer Section Styles */
+  .footer-section {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px; /* Spacing around the section */
+    padding: 12px; /* Padding inside the section */
+    background-color: #d37777; /* Light gray background */
+    color: #fff; /* White text color for contrast */
+    border-top: 2px solid #ccc; /* Decorative top border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgb(0, 0, 0); /* Subtle shadow for depth */
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Make sure the footer takes up full width */
+    font-family: Arial, sans-serif; /* Improved font */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+  }
+
+  /* Optional: Add responsiveness */
+  @media (max-width: 600px) {
+    .footer-section {
+      font-size: 14px; /* Smaller font size for mobile devices */
+      padding: 10px;
+    }
+  }
+</style>
+
+</body>
+</html>
