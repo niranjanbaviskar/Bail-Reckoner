@@ -1,0 +1,12 @@
+[
+    {
+      "id": "1",
+      "password": "12345",
+      "name": "John Doe",
+      "crime": "Theft",
+      "section": "IPC 379",
+      "age": 30,
+      "timeRemaining": "2 years"
+    }
+  ]
+  
