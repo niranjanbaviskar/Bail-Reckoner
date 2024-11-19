@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  /* Container for sections */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Box Styles */
+  .box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #e66465, #9198e5); /* Vibrant colors */
+    color: white;
+  }
+  
+  .box h2 {
+    text-align: center;
+  }
+  
+  .box button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .box button:hover {
+    background-color: #333;
+    color: white;
+  }
+  
+  .faq-answer {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+  /* General Box Styles */
+.box {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #e66465, #9198e5);
+  color: white;
+  text-align: center;
+  width: 300px; /* Adjust width */
+  margin: 0 auto; /* Center the box */
+}
+
+/* Center the button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: white;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%; /* Optionally, set the button to take up full width */
+}
+
+button:hover {
+  background-color: #333;
+  color: white;
+}
+/* FAQ Section Styling */
+#faq {
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FAQ Item Styling */
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.faq-item button:hover {
+  background-color: #0056b3;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin-top: 5px;
+  border-left: 3px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* FAQ Answer toggle effect */
+.faq-answer.active {
+  display: block;
+}
+
+
+.main-content {
+  position: relative; /* Content stays above the blurred background */
+  z-index: 1;
+  padding: 20px; /* Example padding for content */
+}
+
+/* Adjust content's minimum height to ensure scrolling works */
+main {
+  min-height: 100vh; /* This ensures the main content takes at least the full viewport height */
+  padding: 20px;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body takes the full height of the viewport */
+  overflow-y: auto; /* Allow vertical scrolling */
+  position: relative;
+  background-image: url('images/background.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensure the background image covers the entire viewport */
+  background-position: center; /* Keep the background image centered */
+}
+
+.main-content {
+  position: relative; /* Content stays above any potential background */
+  z-index: 1;
+  padding: 20px; /* Example padding for content */
+}
+
+/* Adjust content's minimum height to ensure scrolling works */
+main {
+  min-height: 100vh; /* This ensures the main content takes at least the full viewport height */
+  padding: 20px;
+}
+/* Header Styling */
+header {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 0;
+  padding-top: 100px; /* Adjust based on the header height */
+}
+
+/* Header title styling */
+header h1 {
+  font-family: 'Roboto', sans-serif; /* Stylish font */
+  font-size: 36px;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FFD700; /* Golden color for the title */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+/* Navigation Styling */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover effects for navigation links */
+nav a:hover {
+  background-color: #FFD700; /* Golden color on hover */
+  color: #333;
+  transform: translateY(-3px); /* Slightly lifts the link */
+}
+
+/* Hover underline effect */
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #FFD700;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1); /* Underline effect on hover */
+}
+
+/* Responsive Design: Adjust header layout for smaller screens */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
